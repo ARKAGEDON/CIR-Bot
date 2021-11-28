@@ -52,7 +52,7 @@ async def ClearCalendar(ctx):
 
 #Fonction pour envoyer un message anonyme
 @bot.command()
-async def anonyme(ctx,message):
+async def anonyme(ctx,message="test"):
     if isinstance(ctx.channel, discord.channel.DMChannel):
         embed = discord.Embed(title="**Message Anonyme**", description=message, color=0x3498db)
         embed.set_footer(text="Envoyer des messages anonymes en dm avec la commande !anonyme 'message'")
@@ -62,7 +62,7 @@ async def anonyme(ctx,message):
 
 #Fonction pour afficher les devoirs, du jour, semaine, ou du mois
 @bot.command()
-async def devoirs(ctx, date):
+async def devoirs(ctx, date="day"):
     today = datetime.date.today()
     embed = discord.Embed(title="**DEVOIRS**", color=0xe74c3c)
     #Si l'intervalle donnée est une semaine
@@ -93,9 +93,9 @@ async def devoirs(ctx, date):
 #Vérification si l'utilisateur est un CIR ou non
 @bot.command()
 @commands.has_role(884906571497361468)
-async def addDevoirs(ctx, matiere, date, description):
+async def addDevoirs(ctx, matiere="Matière", date=(datetime.date.today().strftime('%d/%m/%y')), description="Description"):
     start = datetime.datetime.strptime(date, '%d/%m/%y')
-    end = start + datetime.timedelta(days = 1)
+    end = start
     event = Event(matiere,start,end,description)
     calendar.addEvent(event)
     await ctx.message.delete()

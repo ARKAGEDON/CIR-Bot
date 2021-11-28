@@ -11,6 +11,24 @@
             "end": "11/18/2021",
             "start": "11/17/2021",
             "summary": "Web"
+        },
+        {
+            "description": "Ds de maths",
+            "end": "11/24/2021",
+            "start": "11/24/2021",
+            "summary": "Maths"
+        },
+        {
+            "description": "Ds de culture numérique",
+            "end": "12/02/2021",
+            "start": "12/02/2021",
+            "summary": "Culture numérique"
+        },
+        {
+            "description": "Ds de physique",
+            "end": "12/01/2021",
+            "start": "12/01/2021",
+            "summary": "Physique"
         }
     ]
 }
